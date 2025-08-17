@@ -1,17 +1,14 @@
 package com.ensat.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- * Homepage controller.
- */
-@RestController
+@Controller
 public class IndexController {
 
     @GetMapping("/")
-    String index() {
-        return "index";
+    public String index() {
+        System.out.println("Index Controller called");
+        return "index";  // maps to src/main/resources/templates/index.html
     }
-
 }

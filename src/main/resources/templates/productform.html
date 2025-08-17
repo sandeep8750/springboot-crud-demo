@@ -4,15 +4,15 @@
 
     <title>Spring Boot Example</title>
 
-    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    <th:block th:replace="fragments/headerinc :: head"></th:block>
 </head>
 <body>
 <div class="container">
-    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+   <th:block th:replace="fragments/header :: header"></th:block>
 
     <h2>Product Details</h2>
     <div>
-        <form class="form-horizontal" th:object="${product}" th:action="@{/product}" method="post">
+        <form class="form-horizontal" th:object="${product}" th:action="@{/products}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <input type="hidden" th:field="*{version}"/>
             <div class="form-group">
